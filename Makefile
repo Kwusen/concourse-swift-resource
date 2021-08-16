@@ -1,5 +1,5 @@
-IMAGE := databus23/concourse-swift-resource
-TAG   := 1.3.0
+IMAGE := $(or ${IMAGE},${IMAGE},kwusen/concourse-swift-resource)
+TAG   := $(or ${TAG},${TAG},1.3.0)
 
 ifneq ($(http_proxy),)
 BUILD_ARGS+= --build-arg http_proxy=$(http_proxy) --build-arg https_proxy=$(https_proxy) --build-arg no_proxy=$(no_proxy)
